@@ -36,9 +36,43 @@ slider.style('width', '100px');
 slider2 = createSlider(0, 10, 3,0.01);
 slider2.position(0, 80);
 slider2.style('width', '100px');
-
-
+button20 = createButton('Save Image');
+button20.position(0, 180);
+button20.mousePressed(save_image);
+button40 = createButton('Square');
+button40.position(0, 140);
+button40.mousePressed(Line2);
+button60 = createButton('Line3');
+button60.position(0, 120);
+button60.mousePressed(Line2);
 }
+
+function Line3(){
+  choice = 4;
+   background(back);
+
+    //background_col = 0;
+    stroke(random(255),random(255),random(255));  
+    a=0;
+    a2=0;
+    b=window.innerHeight;
+    b2=window.innerHeight;
+}
+function Line2(){
+  choice = 3;
+   background(back);
+
+    //background_col = 0;
+    stroke(random(255),random(255),random(255));  
+    a=0;
+    a2=0;
+    b=window.innerHeight;
+    b2=window.innerHeight;
+}
+function save_image(){
+  save("image.png"); 
+}
+
 function trianglee(){
   console.log('tri');
   choice = 2;
@@ -126,7 +160,38 @@ function draw() {
         fill(c);
         stroke(color(random(255),random(255),random(255)));
         triangle(width/2-100, 100+valt, width/2+100, 100+valt, width/2, 300+valt);
+        //        line(valt,a,a2,valt);
+
          //x,y,x1,y1,x2,y2
+        break;
+    case 3:
+      //noStroke();
+      //square(valt, a, width, b);
+       //fill(color(126,31,37));
+      a-=10*rate;
+      b+=5*rate;
+       //fill(color(random(255),random(255),random(255)));
+      square(a2, a, width, valt);
+      a2+=-10*rate;
+      b2+=-5*rate; 
+        break;
+        case 4:
+          //createCanvas(x, y, WEBGL);
+        fill(color(random(255),random(255),random(255)));
+        line(-a, valt, width, b);
+                line(a, valt, width, b);
+        line(a, -valt, b, b);
+        line(a, valt, width, -b);
+          
+          line(a2,valt,valt,b2,2,100);
+
+         fill(color(126,31,37));
+        a-=10*rate;
+        b+=5*rate;
+         fill(color(126,31,37));
+        line(a2, valt, width, b2);
+        a2+=-10*rate;
+        b2+=-5*rate;
         break;
   
   }
